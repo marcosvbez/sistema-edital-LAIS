@@ -16,7 +16,9 @@ class CreateCbosTable extends Migration
         Schema::create('cbos', function (Blueprint $table) {
             $table->bigIncrements('id');
             $table->timestamps();
-            $table->string('descricao');
+            $table->integer('cbo_codigo');
+            $table->string('cbo_descricao');
+
         });
     }
 

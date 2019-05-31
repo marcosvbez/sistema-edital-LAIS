@@ -18,3 +18,19 @@ Route::get('/', function () {
 Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
+
+Route::get('/cbos', 'CbosController@index');
+
+Route::get('/profissionals', 'ProfissionalsController@index');
+Route::post('/profissionals', 'ProfissionalsController@store');
+Route::get('/profissionals/create', 'ProfissionalsController@create');
+
+
+Route::get('/tipoVinculos', 'TipoVinculoController@index');
+
+
+
+Route::get('/vinculos', 'VinculosController@index');
+Route::post('/vinculos', 'VinculosController@store');
+Route::get('/vinculos/create', 'VinculosController@create');
+
