@@ -30,6 +30,7 @@
                         <th>Cbo</th>
                         <th>Tipo vinculo</th>
                         <th>Profissional</th>
+                        <th>Actions</th>
                     </tr>
                     </thead>
                     <tbody>
@@ -58,7 +59,15 @@
                                     @endif
                                 @endforeach
                             </th>
+                            <th>
+                                <a href="/vinculos/{{$vinculo->id}}/edit">
+                                    <button type = "button" class ="btn-outline-dark ">
+                                        Ver
+                                    </button >
+                                </a>
+                            </th>
                         </tr>
+
                     @endforeach
                     </tbody>
                 </table>

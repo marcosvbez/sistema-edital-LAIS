@@ -30,7 +30,12 @@ Route::get('/tipoVinculos', 'TipoVinculoController@index');
 
 
 
-Route::get('/vinculos', 'VinculosController@index');
-Route::post('/vinculos', 'VinculosController@store');
-Route::get('/vinculos/create', 'VinculosController@create');
+
+
+Route::resource('vinculos','VinculosController');
+
+
+//Route::get('/vinculos', 'VinculosController@index');
+//Route::post('/vinculos', 'VinculosController@store');
+//Route::get('/vinculos/create', 'VinculosController@create');
 
