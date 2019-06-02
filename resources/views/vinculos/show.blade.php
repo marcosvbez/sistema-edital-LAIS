@@ -2,11 +2,11 @@
 
 @extends('layouts.general')
 
-@section('title','Vinculos')
-@section('name','Editar um Vínculo')
+@section('title','Vinculo')
+@section('name',Vínculo')
 
 @section('content')
-    <form method="post" action="/vinculos/{{$vinculo->id}}" style="margin:2%">
+    <form style="margin:2%">
 
         {{method_field('PATCH')}}
 

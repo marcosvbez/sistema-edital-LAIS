@@ -53,6 +53,17 @@ class VinculosController extends Controller
 
     }
 
+    public function show($id)
+    {
+        $vinculo = Vinculo::findOrFail($id);
+
+        $cbos = Cbo::all();
+        $profissionals=Profissional::all();
+        $tipoVinculos=TipoVinculo::all();
+
+        return view('vinculos.show',compact('vinculo','cbos','profissionals','tipoVinculos'));
+    }
+
     public function edit($id)
     {
 

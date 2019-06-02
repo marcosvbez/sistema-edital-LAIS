@@ -136,11 +136,29 @@
                             </th>
 
                             <th>
-                                <a href="/vinculos/{{$vinculo->id}}/edit">
+                                <a href="/vinculos/{{$vinculo->id}}/show">
                                     <button type = "button" class ="btn-outline-dark ">
                                         Ver
                                     </button >
                                 </a>
+                                <a href="/vinculos/{{$vinculo->id}}/edit">
+                                    <button type = "button" class ="btn-outline-dark ">
+                                        Editar
+                                    </button >
+                                </a>
+
+                                <form method="post" action="/vinculos/{{$vinculo->id}}">
+
+                                    {{method_field('DELETE')}}
+
+
+                                    {{csrf_field() }}
+                                    <div>
+                                        <button type="submit" class="btn btn-danger"> Deletar</button>
+                                    </div>
+
+
+                                </form>
                             </th>
                         </tr>
 
@@ -156,7 +174,7 @@
                 <table  class="table table-responsive-sm table-striped">
                     <thead class="thead-dark">
                     <tr>
-                        <th>Vinculação</th>
+
                         <th>Tipo</th>
                         <th>Subtipo</th>
                     </tr>
@@ -164,7 +182,7 @@
                     <tbody>
                     @foreach($tipoVinculos as $tipoVinculo)
                         <tr>
-                            <th>{{$tipoVinculo->ds_vinculacao}}</th>
+
                             <th>{{$tipoVinculo->ds_tipo}}</th>
                             <th>{{$tipoVinculo->ds_subtipo}}</th>
 
