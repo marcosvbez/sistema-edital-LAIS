@@ -136,7 +136,7 @@
                             </th>
 
                             <th>
-                                <a href="/vinculos/{{$vinculo->id}}/show">
+                                <a href="/vinculos/{{$vinculo->id}}">
                                     <button type = "button" class ="btn-outline-dark ">
                                         Ver
                                     </button >

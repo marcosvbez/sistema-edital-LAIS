@@ -3,54 +3,51 @@
 @extends('layouts.general')
 
 @section('title','Vinculo')
-@section('name',Vínculo')
+@section('name','Vínculo')
 
 @section('content')
     <form style="margin:2%">
 
-        {{method_field('PATCH')}}
-
-
-        {{csrf_field() }}
 
 
         <label class="label" for="ch_total">Carga Horária Total</label>
         <div>
-            <input type="text" name="ch_total" placeholder=" " required value="{{$vinculo->ch_total}}">
+            <input readonly class="form-control" type="text" name="ch_total" placeholder=" " required value="{{$vinculo->ch_total}}">
         </div>
 
 
-        <label class="label" for="cbo_id">Cbo</label>
+        <label class="label" for="cbo_id">Código CBO</label>
         <div>
-            <select  name="cbo_id">
-
-                @foreach($cbos as $cbo)
-                    <option value="{{$cbo->id}}" @if($cbo->id==$vinculo->cbo_id) selected @endif>{{$cbo->cbo_descricao}}</option>
-                @endforeach
-
-            </select>
+            <input readonly class="form-control" type="text" name="cbo_codigo" placeholder=" " required value="{{$cbo->cbo_codigo}}">
         </div>
 
-        <label class="label" for="tipo_vinculo_id"> Tipo Vinculos</label>
+        <label class="label" for="cbo_descricao">Código CBO</label>
         <div>
-            <select  name="tipo_vinculo_id">
-
-                @foreach($tipoVinculos as $tipoVinculo)
-                    <option value="{{$tipoVinculo->id}}" @if($tipoVinculo->id==$vinculo->tipo_vinculo_id) selected @endif>{{$tipoVinculo->ds_tipo}}</option>
-                @endforeach
-
-            </select>
+            <input readonly class="form-control" type="text" name="cbo_descricao" placeholder=" " required value="{{$cbo->cbo_descricao}}">
         </div>
 
-        <label class="label" for="profissional_id">Profissional</label>
+        <label class="label"> Tipo Vinculos</label>
         <div>
-            <select  name="profissional_id">
+            <input readonly class="form-control" type="text" name="ds_tipo" placeholder=" " required value="{{$tipoVinculo->ds_tipo}}">
+        </div>
 
-                @foreach($profissionals as $profissional)
-                    <option value="{{$profissional->id}}" @if($profissional->id==$vinculo->profissional_id) selected @endif>{{$profissional->nome}}</option>
-                @endforeach
+        <label class="label">Profissional</label>
+        <div>
+            <input readonly class="form-control" type="text" placeholder=" " required value="{{$profissional->nome}}">
+        </div>
 
-            </select>
+        <label class="label" >Nome do profissional</label>
+        <div>
+            <input readonly class="form-control" type="text" placeholder=" " required value="{{$profissional->nome}}">
+        </div>
+        <label class="label" >Cns do profissional</label>
+        <div>
+            <input readonly class="form-control" type="text" placeholder=" " required value="{{$profissional->CNS}}">
+        </div>
+
+        <label class="label" >Cns do profissional</label>
+        <div>
+            <input readonly class="form-control" type="text" placeholder=" " required value="{{$profissional->CNS}}">
         </div>
 
 

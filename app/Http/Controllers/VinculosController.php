@@ -20,9 +20,8 @@ class VinculosController extends Controller
         $profissionals=Profissional::all();
         $tipoVinculos=TipoVinculo::all();
 
-        $var = request('filter');
 
-        return view('vinculos.index',compact('vinculos','cbos','profissionals','tipoVinculos','var'));
+        return view('vinculos.index',compact('vinculos','cbos','profissionals','tipoVinculos'));
         //return view('vinculos.index')->withVinculos($vinculos)->withCbos($cbos)->withProfissionals($profissionals)->withTipoVinculos($tipoVinculos);
     }
 
@@ -57,11 +56,12 @@ class VinculosController extends Controller
     {
         $vinculo = Vinculo::findOrFail($id);
 
-        $cbos = Cbo::all();
-        $profissionals=Profissional::all();
-        $tipoVinculos=TipoVinculo::all();
+        $cbo = Cbo::findOrFail($vinculo->cbo_id);
 
-        return view('vinculos.show',compact('vinculo','cbos','profissionals','tipoVinculos'));
+        $profissional=Profissional::findOrFail($vinculo->profisisonal_id);
+        $tipoVinculo=TipoVinculo::findOrFail($vinculo->tipo_vinculo_id);
+
+        return view('vinculos.show',compact('vinculo','cbo','profissional','tipoVinculo'));
     }
 
     public function edit($id)
