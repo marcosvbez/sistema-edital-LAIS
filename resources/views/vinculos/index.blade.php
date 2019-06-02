@@ -23,7 +23,7 @@
         <div class="col-sm-1">  </div>
         <div class="col-sm-10">
 
-                <select id="target" style="margin-bottom: 2%">
+                <select class="form-control" id="target" style="margin-bottom: 2%">
                 <option value ="1" selected>Registros</option>
                 <option value="2">Tipo</option>
                 <option value="3">CBO</option>
@@ -35,16 +35,6 @@
                     display: none;
                 }
             </style>
-            {{--<select id="target">--}}
-                {{--<option value="">Select...</option>--}}
-                {{--<option value="content_1">Option 1</option>--}}
-                {{--<option value="content_2">Option 2</option>--}}
-                {{--<option value="content_3">Option 3</option>--}}
-                {{--<select>--}}
-
-                    <div id="content_1" class="inv">Content 1</div>
-                    <div id="content_2" class="inv">Content 2</div>
-                    <div id="content_3" class="inv">Content 3</div>
 
                     <script>
                         document.getElementById('target').addEventListener('change', function () {
@@ -232,7 +222,27 @@
                 </table>
             </div>
 
+
+            <div style="padding-top:2%; padding-bottom: 3%">
+                <a href="/profissionals/create">
+                    <button type = "button" class ="btn-outline-dark ">
+                        Adicionar Profisional
+                    </button >
+                </a>
+                <a href="/cbos/create">
+                    <button type = "button" class ="btn-outline-dark ">
+                        Adicionar CBO
+                    </button >
+                </a>
+                <a href="/tipoVinculos/create">
+                    <button type = "button" class ="btn-outline-dark ">
+                        Adicionar Tipo Vinculo
+                    </button >
+                </a>
+            </div>
         </div>
+
+
         <div class="col-sm-1">  </div>
     </div>
 @endsection

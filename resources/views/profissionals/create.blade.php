@@ -10,24 +10,24 @@
 
         {{csrf_field() }}
 
-        <div>
-            <input type="text" name="nome" placeholder="nome do profissional">
+        <div style="margin-bottom: 2%">
+            <input required class="form-control" type="text" name="nome" placeholder="Nome do profissional">
         </div>
-        <div>
-            <input type="text" name="CNS" placeholder="CNS do profissional">
+        <div style="margin-bottom: 2%">
+            <input required class="form-control" type="text" name="CNS" placeholder="CNS do profissional">
         </div>
-        <div>
-            <input type="date" name="data_atribuicao" placeholder="Data de Atribuição">
+        <div style="margin-bottom: 2%">
+            <input required class="form-control" type="date" name="data_atribuicao" placeholder="Data de Atribuição">
         </div>
-        <div>
-            <p>Sus</p>
-            <select  name="sus">
+        <div style="margin-bottom: 2%">
+            <p>SUS</p>
+            <select  class="form-control" name="sus">
                 <option value="true">Sim</option>
                 <option value="false">Não</option>
             </select>
         </div>
-        <div>
-            <button type="submit"> Adicionar Profissional</button>
+        <div style="margin-bottom: 2%">
+            <button  class ="btn-outline-dark "type="submit"> Adicionar Profissional</button>
         </div>
 
 

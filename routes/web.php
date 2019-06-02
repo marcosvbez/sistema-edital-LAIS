@@ -19,14 +19,14 @@ Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
 
-Route::get('/cbos', 'CbosController@index');
+Route::resource('cbos', 'CbosController');
 
 Route::get('/profissionals', 'ProfissionalsController@index');
 Route::post('/profissionals', 'ProfissionalsController@store');
 Route::get('/profissionals/create', 'ProfissionalsController@create');
 
 
-Route::get('/tipoVinculos', 'TipoVinculoController@index');
+Route::resource('tipoVinculos', 'TipoVinculoController');
 
 
 

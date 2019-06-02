@@ -6,6 +6,8 @@
 @section('name','Vínculo')
 
 @section('content')
+
+
     <form style="margin:2%">
 
 
@@ -26,7 +28,12 @@
             <input readonly class="form-control" type="text" name="cbo_descricao" placeholder=" " required value="{{$cbo->cbo_descricao}}">
         </div>
 
-        <label class="label"> Tipo Vinculos</label>
+        <label class="label">  Vinculos</label>
+        <div>
+            <input readonly class="form-control" type="text" name="ds_tipo" placeholder=" " required value="{{$tipoVinculo->ds_vinculacao}}">
+        </div>
+
+        <label class="label"> Tipo </label>
         <div>
             <input readonly class="form-control" type="text" name="ds_tipo" placeholder=" " required value="{{$tipoVinculo->ds_tipo}}">
         </div>
@@ -45,15 +52,26 @@
             <input readonly class="form-control" type="text" placeholder=" " required value="{{$profissional->CNS}}">
         </div>
 
-        <label class="label" >Cns do profissional</label>
+        <label class="label" >Data de Atribuição</label>
         <div>
-            <input readonly class="form-control" type="text" placeholder=" " required value="{{$profissional->CNS}}">
+            <input readonly class="form-control" type="text" placeholder=" " required value="{{$profissional->data_atribuicao}}">
+        </div>
+
+        <label class="label" >SUS</label>
+        <div>
+            <input readonly class="form-control" type="text" placeholder=" " required value="{{$profissional->sus}}">
         </div>
 
 
-        <div>
-            <button type="submit"> Editar Vínculo</button>
-        </div>
+
+
+
+
+        <a href="/vinculos">
+            <button type = "button" class ="btn-outline-dark ">
+                Voltar
+            </button >
+        </a>
 
 
 
