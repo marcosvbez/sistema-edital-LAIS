@@ -10,17 +10,43 @@
 
         {{csrf_field() }}
 
+        <label class="label" for="ch_total">Carga Horária Total</label>
         <div>
-            <input type="text" name="ch_total" placeholder="Carga horária total">
+            <input type="text" name="ch_total" placeholder=" " required>
         </div>
+
+
+        <label class="label" for="cbo_id">Cbo</label>
         <div>
-            <input type="text" name="cbo_id" placeholder="CBO">
+            <select  name="cbo_id">
+
+                @foreach($cbos as $cbo)
+                    <option value="{{$cbo->id}}">{{$cbo->cbo_descricao}}</option>
+                @endforeach
+
+            </select>
         </div>
+
+        <label class="label" for="tipo_vinculo_id"> Tipo Vinculos</label>
         <div>
-            <input type="text" name="tipo_vinculo_id" placeholder="Tipo de vinculo">
+            <select  name="tipo_vinculo_id">
+
+                @foreach($tipoVinculos as $tipoVinculo)
+                    <option value="{{$tipoVinculo->id}}">{{$tipoVinculo->ds_tipo}}</option>
+                @endforeach
+
+            </select>
         </div>
+
+        <label class="label" for="profissional_id">Profissional</label>
         <div>
-            <input type="text" name="profissional_id" placeholder="Profissional">
+            <select  name="profissional_id">
+
+                @foreach($profissionals as $profissional)
+                    <option value="{{$profissional->id}}">{{$profissional->nome}}</option>
+                @endforeach
+
+            </select>
         </div>
 
 

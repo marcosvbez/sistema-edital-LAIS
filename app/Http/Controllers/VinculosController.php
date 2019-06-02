@@ -17,8 +17,10 @@ class VinculosController extends Controller
         $profissionals=\App\Profissional::all();
         $tipoVinculos=\App\TipoVinculo::all();
 
+        $var = request('filter');
 
-        return view('vinculos.index')->withVinculos($vinculos)->withCbos($cbos)->withProfissionals($profissionals)->withTipoVinculos($tipoVinculos);
+        return view('vinculos.index',compact('vinculos','cbos','profissionals','tipoVinculos','var'));
+        //return view('vinculos.index')->withVinculos($vinculos)->withCbos($cbos)->withProfissionals($profissionals)->withTipoVinculos($tipoVinculos);
     }
 
 
@@ -26,8 +28,11 @@ class VinculosController extends Controller
     
     public function create()
     {
+        $cbos = \App\Cbo::all();
+        $profissionals=\App\Profissional::all();
+        $tipoVinculos=\App\TipoVinculo::all();
 
-        return view('vinculos.create');
+        return view('vinculos.create')->withCbos($cbos)->withProfissionals($profissionals)->withTipoVinculos($tipoVinculos);
     }
 
 
