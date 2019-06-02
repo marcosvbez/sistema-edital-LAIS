@@ -5,6 +5,9 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 
 use App\Vinculo;
+use App\Cbo;
+use App\Profissional;
+use App\TipoVinculo;
 
 
 class VinculosController extends Controller
@@ -13,9 +16,9 @@ class VinculosController extends Controller
     {
 
         $vinculos =Vinculo::all();
-        $cbos = \App\Cbo::all();
-        $profissionals=\App\Profissional::all();
-        $tipoVinculos=\App\TipoVinculo::all();
+        $cbos = Cbo::all();
+        $profissionals=Profissional::all();
+        $tipoVinculos=TipoVinculo::all();
 
         $var = request('filter');
 
@@ -28,9 +31,9 @@ class VinculosController extends Controller
     
     public function create()
     {
-        $cbos = \App\Cbo::all();
-        $profissionals=\App\Profissional::all();
-        $tipoVinculos=\App\TipoVinculo::all();
+        $cbos = Cbo::all();
+        $profissionals=Profissional::all();
+        $tipoVinculos=TipoVinculo::all();
 
         return view('vinculos.create')->withCbos($cbos)->withProfissionals($profissionals)->withTipoVinculos($tipoVinculos);
     }
@@ -54,7 +57,12 @@ class VinculosController extends Controller
     {
 
         $vinculo = Vinculo::findOrFail($id);
-        return view('vinculos.edit',compact('vinculo'));
+
+        $cbos = Cbo::all();
+        $profissionals=Profissional::all();
+        $tipoVinculos=TipoVinculo::all();
+
+        return view('vinculos.edit',compact('vinculo','cbos','profissionals','tipoVinculos'));
     }
 
 

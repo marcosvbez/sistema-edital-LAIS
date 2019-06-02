@@ -63,7 +63,6 @@
 
 
 
-
             <div  id="1" class="vis">
 
                 <table  class="table table-responsive-sm table-striped">
@@ -194,7 +193,26 @@
                     </tbody>
                 </table>
             </div>
-            <div id ="4" class="inv">5</div>
+            <div id ="4" class="inv">
+
+                <table  class="table table-responsive-sm table-striped">
+                    <thead class="thead-dark">
+                    <tr>
+                        <th>Vinculações</th>
+
+                    </tr>
+                    </thead>
+                    <tbody>
+                    @foreach($tipoVinculos->pluck('ds_vinculacao') as $vinculo  )
+                        <tr>
+                            <th>{{$vinculo}}</th>
+
+
+                        </tr>
+                    @endforeach
+                    </tbody>
+                </table>
+            </div>
 
         </div>
         <div class="col-sm-1">  </div>
