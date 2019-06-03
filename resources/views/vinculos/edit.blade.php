@@ -55,7 +55,7 @@
 
 
         <div>
-            <button type="submit"> Editar Vínculo</button>
+            <button type="submit" class ="btn-outline-dark "> Editar Vínculo</button>
         </div>
 
 

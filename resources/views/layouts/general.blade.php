@@ -11,16 +11,45 @@
     <title>@yield('title','Project')</title>
 </head>
 <body>
-<div class="container">
+<div class="container" >
 <div clas="row" style="padding: 3%">
 <header>
-<nav  class="navbar navbar-dark fixed-top bg-dark flex-md-nowrap p-0 shadow">
+<nav  class="navbar navbar-dark fixed-top bg-dark flex-md-nowrap p-0 shadow" >
     <a class="navbar-brand col-sm-3 col-md-2 mr-0" href="/vinculos">Projeto LAIS</a>
-    <ul class="navbar-nav px-3">
-        <li class="nav-item text-nowrap">
-            <a class="nav-link" href="#">Sign out</a>
-        </li>
-    </ul>
+
+
+
+    <div >
+        <!-- Left Side Of Navbar -->
+        <ul class="navbar-nav mr-auto">
+
+        </ul>
+
+        <!-- Right Side Of Navbar -->
+        <ul class="navbar-nav ml-auto">
+            <!-- Authentication Links -->
+
+                <li class="nav-item dropdown">
+                    <a id="navbarDropdown" class="nav-link dropdown-toggle" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
+                        {{ Auth::user()->name }} <span class="caret"></span>
+                    </a>
+
+                    <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
+                        <a class="dropdown-item" href="{{ route('logout') }}"
+                           onclick="event.preventDefault();
+                                                     document.getElementById('logout-form').submit();">
+                            {{ __('Logout') }}
+                        </a>
+
+                        <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
+                            @csrf
+                        </form>
+                    </div>
+                </li>
+
+        </ul>
+    </div>
+
 </nav>
 </header>
 </div>
@@ -29,6 +58,7 @@
 
 @yield('content')
 </div>
+
 <!-- Optional JavaScript -->
 <!-- jQuery first, then Popper.js, then Bootstrap JS -->
 <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>

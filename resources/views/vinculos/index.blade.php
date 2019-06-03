@@ -61,7 +61,7 @@
                         <th>Nome</th>
                         <th>CNS</th>
                         <th>Data Atribuição</th>
-                        <th>Cbo</th>
+                        <th>CBO</th>
                         <th>Ch total</th>
                         <th>SUS</th>
                         <th>Vinculação</th>

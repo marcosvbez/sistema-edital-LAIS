@@ -51,7 +51,7 @@
 
 
         <div>
-            <button type="submit"> Adicionar Vínculo</button>
+            <button type="submit" class ="btn-outline-dark "> Adicionar Vínculo</button>
         </div>
 
 
