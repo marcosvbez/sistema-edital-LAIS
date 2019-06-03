@@ -16,7 +16,8 @@ O sistema foi desenvolvido para o edital do LAIS, seguindo os requsistos: [anexo
 `touch database/database.sqlite`
 
 ##### Executando o composer 
-'composer install'
+
+`composer install`
 
 ##### Gerando a key  
 
@@ -26,4 +27,5 @@ O sistema foi desenvolvido para o edital do LAIS, seguindo os requsistos: [anexo
 `php artisan migrate`
 
 ##### Finalmente rodando o programa e acessar o link local
-php artisan serve
+
+`php artisan serve`
